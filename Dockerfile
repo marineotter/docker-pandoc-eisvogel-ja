@@ -30,7 +30,7 @@ RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2025/tlnet-fi
     tikzfill
 
 RUN apk add --no-cache font-ipaex python3 py3-pip chromium
-RUN pip3 install --no-cache-dir pandocfilters jinja2
+RUN pip3 install --break-system-packages --no-cache-dir pandocfilters jinja2
 RUN ln -sf python3 /usr/bin/python
 
 RUN adduser -h /home/pandocuser -D pandocuser
