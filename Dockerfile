@@ -1,9 +1,9 @@
-ARG pandoc_version="2.19.2.0-alpine"
+ARG pandoc_version="3.8.3-alpine"
 FROM pandoc/latex:${pandoc_version}
 
 ARG pandoc_version
 
-RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2022/tlnet-final \
+RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2025/tlnet-final \
     && tlmgr install adjustbox \
     babel-japanese \
     background \
@@ -40,7 +40,7 @@ RUN mkdir -p /home/pandocuser/.pandoc/defaults
 RUN mkdir -p /home/pandocuser/.pandoc/filters
 RUN mkdir /temp && chown pandocuser /temp
 
-ARG eisvogel_version="2.0.0"
+ARG eisvogel_version="3.4.0"
 RUN mkdir -p /home/pandocuser/.pandoc/templates \
     && wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v${eisvogel_version}/eisvogel.tex \
     -O /home/pandocuser/.pandoc/templates/eisvogel.latex
