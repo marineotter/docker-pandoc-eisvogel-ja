@@ -2,7 +2,7 @@
 title: 基本的な使い方のサンプル
 subtitle: サブタイトル
 date: 2020-05-06
-author: frozenbonito
+author: marineotter
 ---
 
 # 概要

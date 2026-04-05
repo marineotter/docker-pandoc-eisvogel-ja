@@ -1,4 +1,6 @@
-FROM frozenbonito/pandoc-eisvogel-ja
+ARG REGISTRY=ghcr.io
+ARG IMAGE_OWNER=marineotter
+FROM ${REGISTRY}/${IMAGE_OWNER}/pandoc-eisvogel-ja:latest
 
 USER root
 
