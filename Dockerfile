@@ -4,7 +4,8 @@ FROM pandoc/latex:${pandoc_version}
 ARG pandoc_version
 
 RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2025/tlnet-final \
-    && tlmgr install adjustbox \
+    && tlmgr install \
+    adjustbox \
     babel-japanese \
     background \
     collectbox \
@@ -27,7 +28,9 @@ RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2025/tlnet-fi
     koma-script \
     environ \
     tcolorbox \
-    tikzfill
+    tikzfill \
+    catchfile \
+    hardwrap 
 
 RUN apk add --no-cache font-ipaex python3 py3-pip chromium
 RUN pip3 install --break-system-packages --no-cache-dir pandocfilters jinja2
