@@ -52,9 +52,6 @@ RUN wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download
 COPY filters/pandoc-svg.py ${PANDOC_DATA}/filters/pandoc-svg.py
 COPY default.yaml ${PANDOC_DATA}/defaults/default.yaml
 
-RUN mkdir /data && chown pandocuser /data
-WORKDIR /data
-
 USER pandocuser
 
 ENTRYPOINT [ "/usr/local/bin/pandoc", "-d", "default" ]
